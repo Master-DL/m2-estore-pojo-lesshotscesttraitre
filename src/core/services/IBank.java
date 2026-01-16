@@ -5,6 +5,6 @@ import estorePojo.exceptions.UnknownAccountException;
 
 public interface IBank {
 
-    public void transfert(String from, String to, double amount)
+    void transfert(String from, String to, double amount)
             throws InsufficientBalanceException, UnknownAccountException;
 }
