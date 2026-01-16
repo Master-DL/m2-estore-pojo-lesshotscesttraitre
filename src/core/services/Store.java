@@ -13,7 +13,7 @@ import estorePojo.exceptions.InvalidCartException;
 import estorePojo.exceptions.UnknownAccountException;
 import estorePojo.exceptions.UnknownItemException;
 
-public class Store implements IStore {
+public class Store implements IStoreGet, IStoreCart, IStoreOneShot {
 
 	    private IProvider provider;
 	    private IBank bank;

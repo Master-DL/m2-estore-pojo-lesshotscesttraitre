@@ -3,6 +3,6 @@ package core.services;
 import estorePojo.exceptions.UnknownItemException;
 
 public interface IProvider {
-    public int order(IStore store, Object item, int qty) throws UnknownItemException;
+    public int order(IStoreCart store, Object item, int qty) throws UnknownItemException;
     public double getPrice(Object item) throws UnknownItemException;
 }

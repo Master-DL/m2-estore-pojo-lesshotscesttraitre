@@ -8,7 +8,6 @@ import estorePojo.exceptions.UnknownAccountException;
 import estorePojo.exceptions.UnknownItemException;
 
 public interface IStoreCart {
-
     Cart addItemToCart(
             Cart cart,
             IClient client,
@@ -19,5 +18,4 @@ public interface IStoreCart {
             throws
             InvalidCartException, UnknownItemException,
             InsufficientBalanceException, UnknownAccountException;
-
 }
