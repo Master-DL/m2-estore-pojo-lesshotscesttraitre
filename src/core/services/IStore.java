@@ -9,13 +9,13 @@ import estorePojo.exceptions.UnknownItemException;
 
 public interface IStore {
 
-    public boolean isAvailable(Object item, int qty);
+    public boolean isAvailable(Object item, int qty) throws UnknownItemException;
 
     public Cart addItemToCart(
             Cart cart,
-            Client client,
+            IClient client,
             Object item,
-            int qty);
+            int qty) throws UnknownItemException, InvalidCartException;
 
     public Order pay(Cart cart, String address, String bankAccountRef)
             throws
@@ -23,7 +23,7 @@ public interface IStore {
             InsufficientBalanceException, UnknownAccountException;
 
     public Order oneShotOrder(
-            Client client,
+            IClient client,
             Object item,
             int qty,
             String address,

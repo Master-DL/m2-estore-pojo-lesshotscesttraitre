@@ -13,15 +13,15 @@ import estorePojo.exceptions.InvalidCartException;
 import estorePojo.exceptions.UnknownAccountException;
 import estorePojo.exceptions.UnknownItemException;
 
-public class Store {
+public class Store implements IStore{
 
-	    private Provider provider;
-	    private Bank bank;
+	    private IProvider provider;
+	    private IBank bank;
 
 	    /**
 	     * Constructs a new StoreImpl
 	     */
-	    public Store(Provider prov, Bank bk) {
+	    public Store(IProvider prov, IBank bk) {
 	        provider = prov;
 	        bank = bk;
 	    }
@@ -76,7 +76,7 @@ public class Store {
 	     */
 	    public Cart addItemToCart(
 	            Cart cart,
-	            Client client,
+                IClient client,
 	            Object item,
 	            int qty )
 	    throws UnknownItemException, InvalidCartException {
@@ -170,7 +170,7 @@ public class Store {
 	     * @throws UnknownAccountException
 	     */
 	    public Order oneShotOrder(
-	            Client client,
+                IClient client,
 	            Object item,
 	            int qty,
 	            String address,
